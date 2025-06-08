@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="taskmanger.css" />
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+
+  <div class="container">
+    <form class="form gls" id="form">
+
+      <div class="input-wrapper one gls">
+        <div class="one-inner">
+          <label for="form-title">عنوان</label>
+          <input type="text" name="title" id="form-title" class="form-rep" />
+        </div>
+        <div class="one-inner">
+          <label for="form-detail">توضیحات</label>
+          <input type="text" name="detail" id="form-detail" class="form-rep"/>
+        </div>
+      </div>
+
+      
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="must-do" id="must-yes" value="بله">
+          <label for="must-yes">بله</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="must-do" id="must-no" value="خیر">
+          <label for="must-no">خیر</label>
+        </div>
+      </div>
+
+      
+      <div class="input-wrapper gls">
+        <label for="nazer-input" type="text">ناظر پروژه</label>
+        <select name="nazer" id="nazer-input">
+          <option value="javad Mohammadi">Javad Mohammadi</option>
+          <option value="ali ahmadi">Ali Ahmadi</option>
+          <option value="reza Saberi">Reza Saberi</option>
+        </select>
+      </div>
+
+      <!-- Expire Date -->
+      <div class="input-wrapper gls">
+        <label for="expire-date">مهلت اتمام</label>
+        <input type="date" name="expire" id="expire-date">
+      </div>
+
+      <!-- Status Radio Group -->
+      <div class="input-wrapper gls" id="status-radio-group">
+        <label>وضعیت پروژه</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="status" id="status-pending" value="شروع نشده">
+            <span>شروع نشده</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="status" id="status-in-progress" value="در حال انجام">
+            <span>در حال انجام</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="status" id="status-done" value="تمام شده">
+            <span>انجام شده</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="input-wrapper three">
+        <input type="submit" value="Add task" class="gls" id="task-btn">
+      </div>
+
+    </form>
+  </div>
+  
+
+<div class="filter-box">
+    <div class="filter-container">
+        
+        <label for="title-search"> فیلتر دسته‌ها</label>
+        <select name="title" id="title-search">
+            <option value="title">عنوان</option>
+            <option value="detail">توضیحات</option>
+            <option value="must">موظف است؟</option>
+            <option value="nazer">ناظر</option>
+            <option value="expire">مهلت اتمام</option>
+            <option value="status">وضعیت پروژه</option>
+        </select>
+        
+        <input type="text" id="target-celltext" placeholder="عبارت موردنظر را جستجو کنید...">
+        <input type="submit" value="click search" id="search">
+        <span>
+            <button id="btn">حذف فیلتر</button>
+        </span>
+    </div>
+</div>
+
+
+  <!-- Table Container -->
+  <div class="container-table">
+    <table id="table">
+      <thead>
+        <tr>
+          <th>انتخاب</th>
+          <th>عنوان</th>
+          <th>توضیحات</th>
+          <th>موظف است؟</th>
+          <th>ناظر</th>
+          <th>مهلت اتمام</th>
+          <th>وضعیت</th>
+        </tr>
+      </thead>
+      <tbody id="task-list">
+        <!-- تسک‌ها اینجا اضافه میشن -->
+      </tbody>
+
+
+    </table>
+  </div>
+
+  <!-- JS Files -->
+  <script src="/prticular.js"></script> 
+  <script type="module" src="/taskmanger.js"></script>
+
+</body>
+</html>
